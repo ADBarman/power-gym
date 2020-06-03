@@ -1,44 +1,60 @@
 import React from 'react';
 import './Navbar.scss';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import {  Link } from "react-router-dom";
 
-const Navbar = () => {
+
+const NavBar = () => {
+    const [isSticky, setSticky] = useState(false);
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if(window.scrollY > 20){
+        setSticky(true)
+      }else{
+        setSticky(false)
+      }
+    })
+  }, []);
+
     return (
-        <div className="jumbotron jumbotron-height">
-            <nav className="navbar navbar-expand-lg navbar-dark bg-color">
+        
+            <nav className={isSticky ? "fade in show navbar navbar-expand-sm fixed-top navbar-dark bg-dark " : "fade out show navbar navbar-expand-sm fixed-top navbar-dark " }>
                 <div className="container">
-                    <a className="navbar-brand text-white" href="/">POWER <span className="logoX">X</span></a>
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <Link className="navbar-brand" to="/home">POWER <strong className="text-yellow">X</strong></Link>
+                    <button className="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                        aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
 
-                    <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <div className="collapse navbar-collapse" id="collapsibleNavId">
                         <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
-                            <li className="nav-item">
-                                <a className="nav-link text-white" href="/">Home<span className="sr-only">(current)</span></a>
+                            <li className="nav-item active">
+                                <Link className="nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link text-white" href="/services">Services</a>
+                                <Link className="nav-link" to="/services">Services</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link text-white" href="/ourClasses">Our Classes</a>
+                                <Link className="nav-link" to="/ourClasses">Our Classes</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link text-white" href="/aboutUs">About Us</a>
+                                <Link className="nav-link" to="/aboutUs">About Us</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link text-white" href="/blog">Blog</a>
+                                <Link className="nav-link" to="/blog">Blog</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link text-white" href="/pricing">Pricing</a>
+                                <Link className="nav-link" to="/pricing">Pricing</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link text-white" href="/contactUs">Contact Us</a>
+                                <Link className="nav-link" to="/contactUs">Contact Us</Link>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
-            <div className="container d-flex align-items-center">
+            /* <div className="container d-flex align-items-center">
                 <div className="row">
                     <div className="col-md-6 text-white intro-Style">
                         <h1 className="n-margin"> <span className="fitness">THE BEST FITNESS</span> <br/> STUDIO IN TOWN</h1>
@@ -47,7 +63,7 @@ const Navbar = () => {
                         <button type="button" class="btn btn-warning">JOIN US</button>
                     </div>
                     <div className="col-md-6">
-                        {/* <div class="heroVideo">
+                        <div class="heroVideo">
                             <div class="backgroundX">
                                 <div class="verticalLine">
                                     <svg width="64px" height="64px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="background-color: rgb(107, 107, 117); border-radius: 50%; padding: 10px; cursor: pointer;">
@@ -57,12 +73,12 @@ const Navbar = () => {
                                     </svg>
                                 </div>
                             </div>
-                        </div> */}
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div> */
+        
     );
 };
 
-export default Navbar;
+export default NavBar;

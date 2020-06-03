@@ -6,27 +6,24 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Navbar from './components/Navbar/Navbar';
-import About from './components/AboutUs/About';
-import Workout from './components/Workout/Workout';
-import Training from './components/Training/Training';
-import ChooseUs from './components/ChooseUs/ChooseUs';
-import Footer from './components/Footer/Footer';
+import NavBar from './components/Navbar/Navbar';
+import Home from './components/Pages/Home/Home';
+import Pricing from './components/Pages/Pricing/Pricing';
 
 
 function App() {
   return (
     <Router>
+      <NavBar></NavBar>
       <Switch>
-        <Route path="/">
-          <Navbar></Navbar>
-          <Workout></Workout>
-          <About></About>
-          <Training></Training>
-          <ChooseUs></ChooseUs>
-          <Footer></Footer>
+        <Route exact path="/">
+          <Home></Home>
         </Route>
-        <Route path="/topics">
+        <Route path="/home">
+            <Home></Home>
+        </Route>
+        <Route  path="/pricing">
+            <Pricing></Pricing>
         </Route>
         <Route path="/">
         </Route>
