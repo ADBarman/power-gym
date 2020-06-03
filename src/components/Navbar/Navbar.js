@@ -14,7 +14,7 @@ const Navbar = () => {
                     <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
                         <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
                             <li className="nav-item">
-                                <a className="nav-link text-white" href="/home">Home<span className="sr-only">(current)</span></a>
+                                <a className="nav-link text-white" href="/">Home<span className="sr-only">(current)</span></a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link text-white" href="/services">Services</a>
@@ -47,7 +47,17 @@ const Navbar = () => {
                         <button type="button" class="btn btn-warning">JOIN US</button>
                     </div>
                     <div className="col-md-6">
-
+                        {/* <div class="heroVideo">
+                            <div class="backgroundX">
+                                <div class="verticalLine">
+                                    <svg width="64px" height="64px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="background-color: rgb(107, 107, 117); border-radius: 50%; padding: 10px; cursor: pointer;">
+                                        <g fill="#fff" id="Group" transform="translate(-528.000000, -144.000000)">
+                                            <path d="M543,152 L531,158 L531,146 L543,152 L543,152 Z M543,152" id="Shape"></path>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
